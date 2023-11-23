@@ -9,11 +9,17 @@
 <script>
     function makeRequest()
     {
+        try{
          axios.get('http://jsonplaceholder.typicode.com/posts/1')
          .then(response=>{
             document.getElementById('output').textContent=JSON.stringify(response,null,2);
             console.log(response)
          })
+        }
+        catch(err)
+        {
+            console.log(err)
+        }
 
     }
     makeRequest()
